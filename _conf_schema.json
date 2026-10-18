@@ -1,0 +1,48 @@
+{
+  "enabled": {
+    "type": "bool",
+    "default": true,
+    "description": "启用消息防抖"
+  },
+  "listen_seconds": {
+    "type": "float",
+    "default": 2.0,
+    "description": "等待窗口（秒）。收到消息后最多等这么久，期间同一个人再发消息就合并；设为 0 等于关闭。"
+  },
+  "max_merge_count": {
+    "type": "int",
+    "default": 3,
+    "description": "最多合并几条。达到上限后立即发出，不再继续等；设为 0 表示不限制。"
+  },
+  "scope": {
+    "type": "string",
+    "default": "group",
+    "description": "生效范围：group 只合并群聊消息，all 群聊和私聊都合并。",
+    "options": ["group", "all"]
+  },
+  "exempt_at": {
+    "type": "bool",
+    "default": true,
+    "description": "被 @ 时不等待，立即处理（推荐开启，避免点名后还要等 2 秒）。"
+  },
+  "exempt_command": {
+    "type": "bool",
+    "default": true,
+    "description": "指令消息不等待，立即处理。"
+  },
+  "command_prefixes": {
+    "type": "list",
+    "default": ["/"],
+    "description": "指令前缀列表，用于判断是否豁免。"
+  },
+  "exempt_gif": {
+    "type": "bool",
+    "default": true,
+    "description": "消息里带 GIF 时不合并（GIF 有时效性，合并容易丢帧）。"
+  },
+  "debug": {
+    "type": "bool",
+    "default": false,
+    "description": "输出合并调试日志"
+  }
+}

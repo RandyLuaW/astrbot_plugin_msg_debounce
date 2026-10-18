@@ -1,0 +1,15 @@
+name: astrbot_plugin_msg_debounce
+display_name: 消息防抖
+desc: "把同一个人在短时间内连发的多条消息合并成一条再处理：先到的消息等待一小段窗口，窗口内若有新消息就由新消息接管并携带全部内容，避免连发三句触发三轮 LLM 回复。@ 机器人和指令默认不延迟。"
+short_desc: 连续消息合并，只触发一轮回复
+author: Randy Lua
+repo: https://github.com/RandyLuaW/astrbot_plugin_msg_debounce
+version: 1.0.0
+astrbot_version: ">=4.17.0"
+support_platforms:
+  - aiocqhttp
+tags:
+  - 防抖
+  - 群聊
+  - 消息合并
+  - 上下文

@@ -1,0 +1,14 @@
+# 运行时产物
+__pycache__/
+*.pyc
+*.pyo
+
+# 运行时配置（AstrBot 会依据 _conf_schema.json 自动生成）
+config.json
+config.json.bak*
+
+# 开发调试产物
+*.log
+*.orig
+*.patch
+.venv/
